@@ -1,11 +1,14 @@
 import type { FC } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router'
+import PageLinksList from './links/page-links-list'
 
 const Routers: FC = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route>{/* <Route path="/" element} />*/}</Route>
+                <Route>
+                    <Route path="/" element={<PageLinksList />} />
+                </Route>
             </Routes>
         </BrowserRouter>
     )
