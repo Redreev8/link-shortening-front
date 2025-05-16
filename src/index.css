@@ -2,9 +2,12 @@
 @import "tailwindcss";
 
 @theme {
-    --color-bg: #B3B7BA;
-    --color-card: #D2D1CD;
-    --color-text: #0F141A;
+    --color-bg: #E4E5E9;
+    --color-card: #F5F4F2;
+    --color-text: #0A0E11;
+    --color-active-text: #F5F4F2;
+    --color-active: #E74C2E;
+    --color-active-f: #C23317;
 
     --font-main: "Alumni Sans", sans-serif;
 }
