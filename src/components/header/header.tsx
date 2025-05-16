@@ -28,7 +28,7 @@ const Header: FC<HeaderProps> = ({
         console.log(document.body.scrollHeight - window.innerHeight)
         if (
             Math.ceil(scrollTop) ==
-                document.body.scrollHeight - window.innerHeight
+            document.body.scrollHeight - window.innerHeight
         ) {
             ref.current!.style.width = '100%'
             return
