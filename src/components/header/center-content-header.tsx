@@ -6,7 +6,10 @@ const CenterHeader: FC<AreaHTMLAttributes<HTMLDivElement>> = ({
     children,
     ...props
 }) => {
-    const cl = classNames(className, 'col-start-2 col-end-3')
+    const cl = classNames(
+        className,
+        'col-start-2 col-end-3 justify-self-center',
+    )
     return (
         <div className={cl} {...props}>
             {children}

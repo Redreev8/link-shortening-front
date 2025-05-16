@@ -6,7 +6,7 @@ const RightHeader: FC<AreaHTMLAttributes<HTMLDivElement>> = ({
     children,
     ...props
 }) => {
-    const cl = classNames(className, 'col-start-3 col-end-4')
+    const cl = classNames(className, 'col-start-3 col-end-4 justify-self-end')
     return (
         <div className={cl} {...props}>
             {children}

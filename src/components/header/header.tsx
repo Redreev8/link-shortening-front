@@ -11,7 +11,7 @@ const Header: FC<AreaHTMLAttributes<HTMLDivElement>> = ({
         'rounded-xl bg-card',
         'sticky bottom-1 h-[72px]',
         'transition-[width] duration-300',
-        'inline-grid grid-cols-3 p-4',
+        'inline-grid grid-cols-3 p-4 items-center',
     )
     const ref = useRef<HTMLDivElement>(null)
     const handelScroll = () => {
