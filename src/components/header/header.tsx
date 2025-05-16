@@ -17,8 +17,6 @@ const Header: FC<AreaHTMLAttributes<HTMLDivElement>> = ({
     const handelScroll = () => {
         const scrollTop =
             window.pageYOffset || document.documentElement.scrollTop
-        console.log(Math.ceil(scrollTop))
-        console.log(document.body.scrollHeight - window.innerHeight)
         if (
             Math.ceil(scrollTop) ==
             document.body.scrollHeight - window.innerHeight
