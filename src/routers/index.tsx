@@ -7,7 +7,7 @@ const Routers: FC = () => {
         <BrowserRouter>
             <Routes>
                 <Route>
-                    <Route path="/" element={<PageLinksList />} />
+                    <Route path="/links" element={<PageLinksList />} />
                 </Route>
             </Routes>
         </BrowserRouter>
