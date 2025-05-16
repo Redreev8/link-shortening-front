@@ -1,12 +1,7 @@
 import classNames from 'classnames'
 import { type FC, type AreaHTMLAttributes, useEffect, useRef } from 'react'
 
-interface HeaderProps extends AreaHTMLAttributes<HTMLDivElement> {
-    isContainer?: boolean
-}
-
-const Header: FC<HeaderProps> = ({
-    isContainer,
+const Header: FC<AreaHTMLAttributes<HTMLDivElement>> = ({
     className,
     children,
     ...props
@@ -16,9 +11,7 @@ const Header: FC<HeaderProps> = ({
         'rounded-xl bg-card',
         'sticky bottom-1 h-[72px]',
         'transition-[width] duration-300',
-        {
-            'inline-grid grid-cols-3 p-4': !isContainer,
-        },
+        'inline-grid grid-cols-3 p-4',
     )
     const ref = useRef<HTMLDivElement>(null)
     const handelScroll = () => {
