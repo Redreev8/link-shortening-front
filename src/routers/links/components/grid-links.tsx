@@ -7,7 +7,6 @@ interface GridLinksProps {
 }
 
 const GridLinks: FC<GridLinksProps> = ({ links }) => {
-    console.log(links)
     return (
         <ul className="grid grid-cols-[repeat(auto-fit,minmax(360px,1fr))] gap-1">
             {links.map((l) => {
