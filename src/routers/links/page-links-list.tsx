@@ -31,7 +31,7 @@ const PageLinksList: FC = () => {
             <Header className="self-center">
                 <LeftContentHeader></LeftContentHeader>
                 <RightContentHeader>
-                    <Btn isOutline as="router" to={'/links/add'}>
+                    <Btn isOutline as="router" to={'/links/create-link'}>
                         Add
                     </Btn>
                 </RightContentHeader>

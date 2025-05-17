@@ -11,7 +11,7 @@ const GridLinks: FC<GridLinksProps> = ({ links }) => {
         <ul className="grid grid-cols-[repeat(auto-fit,minmax(360px,1fr))] gap-1">
             {links.map((l) => {
                 return (
-                    <li key={l.customurl}>
+                    <li key={l.customUrl}>
                         <CardLink {...l} />
                     </li>
                 )

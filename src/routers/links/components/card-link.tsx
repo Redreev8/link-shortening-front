@@ -9,10 +9,10 @@ interface CardLinkProps extends Link {
     as?: TitleProps['as']
 }
 
-const CardLink: FC<CardLinkProps> = ({ as, url, customurl, description }) => {
-    const sizeTitleCustomUrl = (as ?? 2) + 1
+const CardLink: FC<CardLinkProps> = ({ as, url, customUrl, description }) => {
+    const sizeTitlecustomUrl = (as ?? 2) + 1
     return (
-        <LinkRouter to={`/links/${customurl}`}>
+        <LinkRouter to={`/links/${customUrl}`}>
             <Card className="flex min-h-[360px] flex-col justify-between">
                 <div className="max-w-full overflow-hidden">
                     <Title className="text-nowrap" as={as} size={4}>
@@ -21,12 +21,12 @@ const CardLink: FC<CardLinkProps> = ({ as, url, customurl, description }) => {
                     <Title
                         size={5}
                         as={
-                            sizeTitleCustomUrl >= 7
+                            sizeTitlecustomUrl >= 7
                                 ? 6
-                                : (sizeTitleCustomUrl as TitleProps['as'])
+                                : (sizeTitlecustomUrl as TitleProps['as'])
                         }
                     >
-                        {customurl}
+                        {customUrl}
                     </Title>
                 </div>
                 {description && <Text>{description}</Text>}

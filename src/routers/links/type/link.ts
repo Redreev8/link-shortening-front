@@ -1,6 +1,6 @@
 interface Link {
     url: string
-    customurl: string
+    customUrl: string
     description?: string
 }
 
