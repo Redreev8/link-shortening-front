@@ -35,8 +35,9 @@ const Btn = ({
     const cl = classNames(
         className,
         'text-xl pt-[5px] pb-1 px-5 border-2 border-active',
-        'rounded-xl transition-[border-radius, border-color, background-color] duration-700',
+        'rounded-xl transition-[border-radius, border-color, background-color, opacity] duration-700',
         'hover:rounded-[40px]',
+        'disabled:opacity-50',
         {
             'bg-active text-active-text focus:bg-active-f': !isOutline,
             'color-text focus:border-active-f': isOutline,

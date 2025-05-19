@@ -8,12 +8,12 @@ const Textarea: FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = ({
 }) => {
     const cl = classNames(
         className,
-        'min-h-[320px]',
         'text-text text-xl p-0 font-medium',
         'border-b-2 border-text outline-none resize-none',
-        'transition-[border-color] duration-700',
+        'transition-[border-color, opacity] duration-700',
         'hover:border-active focus:border-active',
         'placeholder:text-xl placeholder:text-placeholder',
+        'disabled:opacity-50',
     )
     return (
         <textarea className={cl} {...props}>
