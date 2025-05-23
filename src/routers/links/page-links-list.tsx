@@ -9,6 +9,7 @@ import Header, {
     RightContentHeader,
 } from '../../components/header'
 import Btn from '../../ui/btn'
+import { VisuallyHidden } from 'radix-ui'
 
 const PageLinksList: FC = () => {
     const { isPending, data } = useQuery({
@@ -22,15 +23,15 @@ const PageLinksList: FC = () => {
             className="flex min-h-screen flex-col justify-between"
         >
             <main className="pb-1">
-                <Title className="sr-only" as={1}>
-                    List of links you create
-                </Title>
+                <VisuallyHidden.Root asChild>
+                    <Title as={1}>List of links you create</Title>
+                </VisuallyHidden.Root>
                 <GridLinks links={data!} />
             </main>
             <Header className="self-center">
                 <LeftContentHeader></LeftContentHeader>
                 <RightContentHeader>
-                    <Btn isOutline as="router" to={'/links/add'}>
+                    <Btn isOutline as="router" to={'/links/create-link'}>
                         Add
                     </Btn>
                 </RightContentHeader>
