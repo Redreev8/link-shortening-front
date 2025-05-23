@@ -31,12 +31,6 @@ const useChangeLink = ({
     })
     const mutation = useChangeMutationLink()
     const onSubmit = async (d: Link) => {
-        console.log({
-            url: d.url,
-            newCustomUrl: d.customUrl,
-            description: d.description,
-            customUrl,
-        })
         try {
             await mutation.mutateAsync({
                 url: d.url,
