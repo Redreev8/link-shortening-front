@@ -10,12 +10,14 @@ import Header, {
 } from '../../components/header'
 import Btn from '../../ui/btn'
 import { VisuallyHidden } from 'radix-ui'
+import useLogout from '../auth/hooks/useLogout'
 
 const PageLinksList: FC = () => {
     const { isPending, data } = useQuery({
         queryKey: ['links'],
         queryFn: () => getLinks(),
     })
+    const logout = useLogout()
     if (isPending) return
     return (
         <Container
@@ -31,8 +33,13 @@ const PageLinksList: FC = () => {
             <Header className="self-center">
                 <LeftContentHeader></LeftContentHeader>
                 <RightContentHeader>
-                    <Btn isOutline as="router" to={'/links/create-link'}>
-                        Add
+                    <Btn
+                        onClick={logout}
+                        isOutline
+                        as="router"
+                        to={'/links/create-link'}
+                    >
+                        Logout
                     </Btn>
                 </RightContentHeader>
             </Header>
