@@ -1,5 +1,5 @@
 import type { AxiosError, AxiosRequestConfig } from 'axios'
-import fetchToken from './fetch-token'
+import fetchToken from './fetch'
 
 const checkToken = async (
     config?: AxiosRequestConfig,

@@ -2,14 +2,14 @@ import type { AxiosError, AxiosRequestConfig } from 'axios'
 import fetchAuth from './fetch'
 import type { FormFieldsAuth } from '../type/auth'
 
-const apiAuth = async (
+const apiRegistration = async (
     body: FormFieldsAuth,
     config?: AxiosRequestConfig,
 ): Promise<{ data: string } | AxiosError> => {
     return await fetchAuth.post<
         { data: string },
         AxiosError<{ message: string }>
-    >('/login', body, config)
+    >('/register', body, config)
 }
 
-export default apiAuth
+export default apiRegistration
