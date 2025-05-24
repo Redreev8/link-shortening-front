@@ -14,10 +14,12 @@ const LayoutAuth = () => {
     const navigate = useNavigate()
     const checkTokenLocalStorage = async () => {
         const token = localStorage.getItem('auth-token')
+        const url = window.location.href
         try {
             await checkToken({ headers: { token } })
             navigate('/links')
         } catch {
+            if (!url.includes('links')) return
             navigate('/auth')
         }
     }
