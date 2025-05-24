@@ -9,6 +9,7 @@ import useChangeLink from '../hooks/useChangeLink'
 import { BtnModal } from '../../../ui/modal'
 import { Dialog } from 'radix-ui'
 import ModalRemoveLink from './modal-remove-link'
+import QR from '../../../ui/qr'
 
 interface CardLinkProps extends Link {
     as?: TitleProps['as']
@@ -48,7 +49,9 @@ const CardLink: FC<CardLinkProps> = ({ as, url, customUrl, description }) => {
                                 {customUrl}
                             </Title>
                         </div>
-                        {description && <Text>{description}</Text>}
+                        {description && (
+                            <Text className="mr-[80px]">{description}</Text>
+                        )}
                     </div>
                 ) : (
                     <FormLink
@@ -60,7 +63,7 @@ const CardLink: FC<CardLinkProps> = ({ as, url, customUrl, description }) => {
                         id={idForm}
                     />
                 )}
-                <div className="flex gap-2">
+                <div className="flex items-end gap-2">
                     {!isChange ? (
                         <>
                             <Btn
@@ -82,6 +85,13 @@ const CardLink: FC<CardLinkProps> = ({ as, url, customUrl, description }) => {
                             >
                                 Remove
                             </BtnModal>
+
+                            <div className="ml-auto flex h-[40px] items-end">
+                                <QR
+                                    title={`to http://localhost:3000/l/1/${customUrl}`}
+                                    value={`http://localhost:3000/l/1/${customUrl}`}
+                                />
+                            </div>
                         </>
                     ) : (
                         <>
