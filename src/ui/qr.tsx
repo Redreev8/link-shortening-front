@@ -26,9 +26,22 @@ interface QRProps {
 
 const QR: FC<SVGAttributes<SVGSVGElement> & QRProps> = ({
     fgColor = '#0A0E11',
+    bgColor = '#F5F4F2',
+    level = 'H',
+    width = '80',
+    height = '80',
     ...props
 }) => {
-    return <QRCodeSVG fgColor={fgColor} {...props} />
+    return (
+        <QRCodeSVG
+            width={width}
+            height={height}
+            level={level}
+            bgColor={bgColor}
+            fgColor={fgColor}
+            {...props}
+        />
+    )
 }
 
 export default QR
