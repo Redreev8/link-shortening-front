@@ -34,7 +34,7 @@ const Btn = ({
 }: ButtonProps): JSX.Element => {
     const cl = classNames(
         className,
-        'text-xl pt-[5px] pb-1 px-5 border-2 border-active',
+        'text-xl pt-[5px] pb-1 px-5 border-2 border-active text-center',
         'rounded-xl transition-[border-radius, border-color, background-color, opacity] duration-700',
         'hover:rounded-[40px]',
         'disabled:opacity-50',
