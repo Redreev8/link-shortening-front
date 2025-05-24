@@ -1,4 +1,4 @@
-import { useId, useState, type FC } from 'react'
+import { useContext, useId, useState, type FC } from 'react'
 import Title, { type TitleProps } from '../../../ui/title'
 import Card from '../../../ui/card'
 import Text from '../../../ui/text'
@@ -10,12 +10,15 @@ import { BtnModal } from '../../../ui/modal'
 import { Dialog } from 'radix-ui'
 import ModalRemoveLink from './modal-remove-link'
 import QR from '../../../ui/qr'
+import { LayoutAuthContext } from '../../auth/layout-auth'
 
 interface CardLinkProps extends Link {
     as?: TitleProps['as']
 }
 
 const CardLink: FC<CardLinkProps> = ({ as, url, customUrl, description }) => {
+    const { userData } = useContext(LayoutAuthContext)
+    const { id } = userData! ?? {}
     const sizeTitleCustomUrl = (as ?? 2) + 1
     const [isChange, setIsChange] = useState<boolean>(false)
     const idForm = useId()
@@ -88,8 +91,8 @@ const CardLink: FC<CardLinkProps> = ({ as, url, customUrl, description }) => {
 
                             <div className="ml-auto flex h-[40px] items-end">
                                 <QR
-                                    title={`to http://localhost:3000/l/1/${customUrl}`}
-                                    value={`http://localhost:3000/l/1/${customUrl}`}
+                                    title={`to http://localhost:3000/l/${id}/${customUrl}`}
+                                    value={`http://localhost:3000/l/${id}/${customUrl}`}
                                 />
                             </div>
                         </>
