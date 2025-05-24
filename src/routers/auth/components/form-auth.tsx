@@ -17,18 +17,18 @@ const FormAuth: FC<FormHTMLAttributes<HTMLFormElement>> = ({
         <form onSubmit={auth} className={cl} {...props}>
             <div className="flex flex-col gap-5">
                 <Label>
-                    <span>URL site</span>
+                    <span>Name</span>
                     <Input
-                        placeholder="https://link"
+                        placeholder="ivan5"
                         type="text"
                         {...register('name')}
                     />
                     {errors.name && <Error>{errors.name.message}</Error>}
                 </Label>
                 <Label>
-                    <span>Custom name URL</span>
+                    <span>Password</span>
                     <Input
-                        placeholder="l"
+                        placeholder="******"
                         type="password"
                         {...register('password')}
                     />
