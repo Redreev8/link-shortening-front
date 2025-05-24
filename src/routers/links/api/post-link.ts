@@ -6,7 +6,7 @@ const postLink = async (
     body: Link,
     config?: AxiosRequestConfig,
 ): Promise<Link | AxiosError> => {
-    return await fetchLinks.post<Link, AxiosError<{ message: string }>>(
+    return await fetchLinks().post<Link, AxiosError<{ message: string }>>(
         '/',
         body,
         config,

@@ -3,7 +3,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { formSchemaAuth, type FormFieldsAuth } from '../type/auth'
 import apiAuth from '../api/auth'
 import type { AxiosError } from 'axios'
-import { useNavigate } from 'react-router'
+import { useContext } from 'react'
+import { LayoutAuthContext } from '../layout-auth'
 
 const useAuth = () => {
     const {
@@ -16,12 +17,12 @@ const useAuth = () => {
         reValidateMode: 'onBlur',
         resolver: zodResolver(formSchemaAuth),
     })
-    const navigate = useNavigate()
+    const { setSignal } = useContext(LayoutAuthContext)
     const auth = async (d: FormFieldsAuth) => {
         try {
             const { data } = (await apiAuth(d)) as { data: string }
             localStorage.setItem('auth-token', data)
-            navigate('/links')
+            setSignal(Symbol('signal'))
         } catch (e) {
             const { response } = e as AxiosError
             const data = response!.data as string

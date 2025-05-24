@@ -6,7 +6,7 @@ const putLink = async (
     body: Link & { newCustomUrl: Link['customUrl'] },
     config?: AxiosRequestConfig,
 ): Promise<Link | AxiosError> => {
-    return await fetchLinks.put<Link, AxiosError<{ message: string }>>(
+    return await fetchLinks().put<Link, AxiosError<{ message: string }>>(
         '/' + body.customUrl,
         body,
         config,

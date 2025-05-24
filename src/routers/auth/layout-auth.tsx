@@ -1,8 +1,16 @@
-import { useEffect } from 'react'
+import { createContext, useEffect, useState } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
 import { Outlet, useNavigate } from 'react-router'
 import checkToken from './api/check-token'
 
+export const LayoutAuthContext = createContext<{
+    setSignal: Dispatch<SetStateAction<symbol>>
+}>({
+    setSignal: () => {},
+})
+
 const LayoutAuth = () => {
+    const [signal, setSignal] = useState<symbol>(Symbol('signal'))
     const navigate = useNavigate()
     const checkTokenLocalStorage = async () => {
         const token = localStorage.getItem('auth-token')
@@ -15,12 +23,12 @@ const LayoutAuth = () => {
     }
     useEffect(() => {
         checkTokenLocalStorage()
-    }, [])
+    }, [signal])
 
     return (
-        <>
+        <LayoutAuthContext.Provider value={{ setSignal }}>
             <Outlet />
-        </>
+        </LayoutAuthContext.Provider>
     )
 }
 

@@ -6,7 +6,7 @@ const deleteLink = async (
     customUrl: Link['customUrl'],
     config?: AxiosRequestConfig,
 ): Promise<Link | AxiosError> => {
-    return await fetchLinks.delete<Link, AxiosError<{ message: string }>>(
+    return await fetchLinks().delete<Link, AxiosError<{ message: string }>>(
         '/' + customUrl,
         config,
     )
