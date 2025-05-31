@@ -4,14 +4,14 @@ import Input from '../../../ui/input'
 import Error from '../../../ui/error'
 import classNames from 'classnames'
 import useRegistration from '../hooks/useRegistration'
-import Btn from '../../../ui/btn'
+import Btn, { BtnText } from '../../../ui/btn'
 
 const FormRegistration: FC<FormHTMLAttributes<HTMLFormElement>> = ({
     className,
     ...props
 }) => {
     const cl = classNames(className, 'flex flex-col gap-10')
-    const { register, registration, errors } = useRegistration()
+    const { register, registration, errors, isLoading } = useRegistration()
 
     return (
         <form onSubmit={registration} className={cl} {...props}>
@@ -19,6 +19,7 @@ const FormRegistration: FC<FormHTMLAttributes<HTMLFormElement>> = ({
                 <Label>
                     <span>Name</span>
                     <Input
+                        disabled={isLoading}
                         placeholder="ivan5"
                         type="text"
                         {...register('name')}
@@ -28,6 +29,7 @@ const FormRegistration: FC<FormHTMLAttributes<HTMLFormElement>> = ({
                 <Label>
                     <span>Password</span>
                     <Input
+                        disabled={isLoading}
                         placeholder="******"
                         type="password"
                         {...register('password')}
@@ -39,6 +41,7 @@ const FormRegistration: FC<FormHTMLAttributes<HTMLFormElement>> = ({
                 <Label>
                     <span>Confirm password</span>
                     <Input
+                        disabled={isLoading}
                         placeholder="******"
                         type="password"
                         {...register('confirmPassword')}
@@ -48,13 +51,15 @@ const FormRegistration: FC<FormHTMLAttributes<HTMLFormElement>> = ({
                     )}
                 </Label>
             </div>
-            <div className="flex gap-2">
-                <Btn className="w-full" as="router" to="/auth" isOutline>
-                    Login
-                </Btn>
-                <Btn className="w-full" as="btn">
+            <div className="flex items-center gap-2">
+                <Btn disabled={isLoading} className="w-full" as="btn">
                     registration
                 </Btn>
+                <div className="flex w-full items-center justify-center">
+                    <BtnText as="router" to="/auth">
+                        Login
+                    </BtnText>
+                </div>
             </div>
         </form>
     )
