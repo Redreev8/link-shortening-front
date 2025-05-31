@@ -2,9 +2,10 @@ import axios from 'axios'
 
 const fetchLinks = () =>
     axios.create({
-        baseURL: 'http://localhost:3000/api/links/',
+        baseURL: import.meta.env.VITE_BAKEND_API + '/api/links/',
         headers: {
             'auth-token': localStorage.getItem('auth-token'),
+            'Access-Control-Allow-Origin': '*',
         },
     })
 

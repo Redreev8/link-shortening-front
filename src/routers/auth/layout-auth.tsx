@@ -20,13 +20,18 @@ const LayoutAuth = () => {
     const checkTokenLocalStorage = async () => {
         const token = localStorage.getItem('auth-token')
         const url = window.location.href
+        const isPageLinks = url.includes('links')
         try {
+            if (!token && !isPageLinks) {
+                throw new Error('No found token')
+                return
+            }
             await checkToken({ headers: { token } })
             navigate('/links')
             const { data } = (await UserData()) as { data: User }
             setUserData(data)
         } catch {
-            if (!url.includes('links')) return
+            if (!isPageLinks) return
             navigate('/auth')
             setUserData(null)
         }
