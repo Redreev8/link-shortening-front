@@ -13,7 +13,7 @@ const Textarea: FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = ({
         'transition-[border-color, opacity] duration-700',
         'hover:border-active focus:border-active',
         'placeholder:text-xl placeholder:text-placeholder',
-        'disabled:opacity-50',
+        'disabled:opacity-30',
     )
     return (
         <textarea className={cl} {...props}>

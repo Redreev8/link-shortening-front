@@ -12,7 +12,7 @@ const Input: FC<InputHTMLAttributes<HTMLInputElement>> = ({
         'transition-[border-color, opacity] duration-700',
         'hover:border-active focus:border-active',
         'placeholder:text-xl placeholder:text-placeholder',
-        'disabled:opacity-50',
+        'disabled:opacity-30',
     )
     return <input type="text" className={cl} {...props} />
 }
