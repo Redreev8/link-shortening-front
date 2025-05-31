@@ -15,7 +15,7 @@ const Container: FC<ContainerProps> = ({
 }) => {
     const cl = classNames(className, 'w-full mx-auto', {
         'max-w-[1600px] px-2 lg:px-10': !isFull && !isSmall,
-        'max-w-full pt-1 pb-2 px-1': isFull,
+        'max-w-[1920px] pt-1 pb-2 px-1': isFull,
         'max-w-[600px] px-2 lg:px-10': isSmall,
     })
     return (
