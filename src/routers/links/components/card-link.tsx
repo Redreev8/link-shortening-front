@@ -4,7 +4,7 @@ import Card from '../../../ui/card'
 import Text from '../../../ui/text'
 import type { Link } from '../type/link'
 import FormLink from './form-link'
-import Btn from '../../../ui/btn'
+import Btn, { BtnText } from '../../../ui/btn'
 import useChangeLink from '../hooks/useChangeLink'
 import { BtnModal } from '../../../ui/modal'
 import { Dialog } from 'radix-ui'
@@ -58,7 +58,12 @@ const CardLink: FC<CardLinkProps> = ({ as, url, customUrl, description }) => {
                                         : (sizeTitleCustomUrl as TitleProps['as'])
                                 }
                             >
-                                {customUrl}
+                                <BtnText
+                                    as="link"
+                                    href={`${import.meta.env.VITE_BAKEND_API}/l/${id}/${customUrl}`}
+                                >
+                                    {customUrl}
+                                </BtnText>
                             </Title>
                         </div>
                         {description && (
