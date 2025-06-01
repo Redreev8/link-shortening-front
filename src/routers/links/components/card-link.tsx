@@ -11,6 +11,7 @@ import { Dialog } from 'radix-ui'
 import ModalRemoveLink from './modal-remove-link'
 import QR from '../../../ui/qr'
 import { LayoutAuthContext } from '../../auth/layout-auth'
+import { ScrollBar, ScrollContent } from '../../../ui/scroll'
 
 interface CardLinkProps extends Link {
     as?: TitleProps['as']
@@ -38,9 +39,17 @@ const CardLink: FC<CardLinkProps> = ({ as, url, customUrl, description }) => {
                     <div className="flex h-full flex-col justify-between">
                         {' '}
                         <div className="max-w-full overflow-hidden">
-                            <Title className="text-nowrap" as={as} size={4}>
-                                {url}
-                            </Title>
+                            <ScrollBar>
+                                <ScrollContent>
+                                    <Title
+                                        className="text-nowrap"
+                                        as={as}
+                                        size={4}
+                                    >
+                                        {url}
+                                    </Title>
+                                </ScrollContent>
+                            </ScrollBar>
                             <Title
                                 size={5}
                                 as={
