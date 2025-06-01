@@ -14,6 +14,9 @@ const Routers: FC = () => {
                         <Route path="/links" element={<PageLinksList />} />
                     </Route>
                     <Route>
+                        <Route path="/" element={<PageAuth />} />
+                    </Route>
+                    <Route>
                         <Route path="/auth" element={<PageAuth />} />
                     </Route>
                     <Route>
