@@ -12,4 +12,24 @@
     --color-red: #b31b28;
 
     --font-main: "Alumni Sans", sans-serif;
+
+    --animate-fade-in: fade-in 1s ease-in-out both;
+    @keyframes fade-in {
+        0% {
+           opacity: 0;
+        }
+        100%  {
+           opacity: 1;
+        }
+    }
+
+    --animate-fade-out: fade-out 1s ease-in-out both;
+    @keyframes fade-out {
+        0% {
+           opacity: 1;
+        }
+        100%  {
+           opacity: 0;
+        }
+    }
 }
