@@ -1,7 +1,9 @@
 import { Dialog } from 'radix-ui'
-import Btn, { type BtnAsButton } from '../btn'
+import Btn from '../btn'
+import type { BtnProps } from '../btn/btn'
+import type { BtnAsButton } from '../btn/btn-content'
 
-interface BtnModalProps extends Omit<BtnAsButton, 'as'> {
+interface BtnModalProps extends Omit<BtnAsButton, 'as'>, BtnProps {
     isTrigger?: boolean
 }
 
